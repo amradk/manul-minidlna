@@ -1,0 +1,6 @@
+---
+- name: Start minidlna service, if not started
+  service:
+    name: "{{ service_name[ansible_distribution] }}"
+    state: started
+    enabled: yes

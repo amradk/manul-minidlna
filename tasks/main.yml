@@ -1,0 +1,9 @@
+---
+- name: install minidlna packages
+  include_tasks: "{{ role_path }}/tasks/install.yaml"
+
+- name: configure minidlna
+  include_tasks: "{{ role_path }}/tasks/config.yaml"
+
+- name: start minidlna server
+  include_tasks: "{{ role_path }}/tasks/service.yaml"

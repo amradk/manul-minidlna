@@ -1,0 +1,6 @@
+---
+# handlers file for mysql
+- name: restart minidlna daemon
+  service:
+    name: "{{ service_name[ansible_distribution] }}"
+    state: restarted

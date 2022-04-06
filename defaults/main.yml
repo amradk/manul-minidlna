@@ -1,0 +1,44 @@
+# defaults file for manul-transmission
+---
+install: true
+version: 
+  FreeBSD: '1.3.0_2,1'
+pkg_name: 
+  FreeBSD: 'minidlna'
+config_file_path:
+  FreeBSD: '/usr/local/etc/minidlna.conf'
+user: 'dlna'
+group: 'dlna'
+service_name:
+  FreeBSD: 'minidlna'
+
+minidlna_conf:
+  user: 'dlna'
+  friendly_name: 'My DLNA Server'
+  port: 8200
+  network_interface:
+  strict_dlna: 'no' 
+  notify_interval:
+  minissdpdsocket:
+  serial: '123456'
+  model_number: 1
+  media_dir: []
+  merge_media_dirs: 'no'
+  presentation_url:
+  db_dir: '/var/cache/minidlna'
+  log_dir: '/var/log'
+  log_level:
+  inotify: 'yes'
+  album_art_names:
+  enable_tivo: 'no'
+  tivo_discovery: 'bonjour'
+  root_container: '.'
+  force_sort_criteria: '.'
+  uuid: ''
+  max_connections: '50'
+  wide_links: 'no'
+  enable_subtitles: 'yes'
+
+addition_options: {}
+
+

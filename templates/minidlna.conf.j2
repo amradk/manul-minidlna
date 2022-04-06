@@ -1,0 +1,13 @@
+{% for key, value in minidlna_result_config.items() -%}
+    {% if value is defined and value -%}
+        {% if key == 'media_dir' -%}
+            {% if value is iterable -%}
+                {% for v in value -%}
+                    media_dir={{ v }}
+                {% endfor -%}
+            {% endif -%}
+        {% else -%}
+            {{key}}={{value}}
+        {% endif -%}
+    {% endif -%}
+{% endfor -%}

@@ -1,0 +1,8 @@
+---
+# install transmission packages
+- name: install minidlan package {{ pkg_name[ansible_distribution] }}
+  pkgng:
+    name: 
+      - "{{ pkg_name[ansible_distribution] }}-{{ version[ansible_distribution] }}"
+    state: present
+  when: install|bool == true

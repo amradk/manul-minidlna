@@ -1,0 +1,16 @@
+---
+# manage minidlna configuration
+- name: "Calculate result minidlna config"
+  set_fact:
+    minidlna_result_config : "{{ minidlna_conf | combine(addition_options, recursive=True) }}"
+  when: addition_options != None
+
+- name: "write minidlna config"
+  template:
+    src: minidlna.conf.j2
+    dest: "{{ config_file_path[ansible_distribution] }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: '0644'
+  notify:
+     - restart minidlna daemon
